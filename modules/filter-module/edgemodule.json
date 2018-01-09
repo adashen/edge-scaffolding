@@ -3,8 +3,8 @@
     "image": {
         "repository": "test.azurecr.io/filter-module",
         "tag": {
-            "os-prefix": ["arm32v7", "linux-64", "windows-nano"],
             "version": "0.0.1",
+            "os": ["arm32v7", "linux-64", "windows-nano"],
             "debug-suffix": "-debug"
         }
     },
