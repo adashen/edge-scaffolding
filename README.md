@@ -25,4 +25,5 @@ The deployment includes both third-party images and the self contained modules u
     }
 ```
 This means, there will be three images generated for the edge module: test.azurecr.io/filter-module:0.0.1-arm32v7, test.azurecr.io/filter-module:0.0.1-linux-64, and test.azurecr.io/filter-module:windows-nano. Each one will match to the platform specific Docker file. (./Docker/<platform>/DockerFile)
+
 4. Add module reference to edge.deployment. And fill in the image with image variable ({modules.<modulefoldername>.<platform>.image}), for example for module folder "./modules/datamodule" on linux-x64, the variable will be ${modules.datamodule.linux-x64.image}
