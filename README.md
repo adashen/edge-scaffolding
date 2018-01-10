@@ -9,7 +9,7 @@ Each folder under **modules** folder is an **Edge Module Project**.
 3. The **Docker** folder under the project holds the DockerFiles per platforms. For example, the Docker file for linux-x64 platform should be at "./Docker/linux-x64/DockerFile".
 
 ## "edge.deployment" File
-The deployment includes both third-party images and the self contained modules under modules folder. The file references modules thorugh docker image, and sets the runtime properties of each module. To avoid the continous version change of the self-contained modules (modules in "modules" folder) in this file, it uses a formated image variable to reference the self-contained module. (${modules.<modulename>.<platform>.image}) The variable will later be replaced by the exact image value and generate the final deploy manifest deployment.json file.
+The deployment includes both third-party images and the self contained modules under modules folder. The file references modules thorugh docker image, and sets the runtime properties of each module. To avoid the continous version change of the self-contained modules (modules in "modules" folder) in this file, it uses a formated image variable to reference the self-contained module. (${modules.`<modulefoldername`>.`<platform`>.image}) The variable will later be replaced by the exact image value and generate the final deploy manifest deployment.json file.
 
 ## Usage
 1. Init the edge project with edge-scaffolding.
@@ -26,4 +26,4 @@ The deployment includes both third-party images and the self contained modules u
 ```
 This means, there will be three images generated for the edge module: test.azurecr.io/filter-module:0.0.1-arm32v7, test.azurecr.io/filter-module:0.0.1-linux-64, and test.azurecr.io/filter-module:windows-nano. Each one will match to the platform specific Docker file. (./Docker/<platform>/DockerFile)
 
-4. Add module reference to edge.deployment. And fill in the image with image variable ({modules.<modulefoldername>.<platform>.image}), for example for module folder "./modules/datamodule" on linux-x64, the variable will be ${modules.datamodule.linux-x64.image}
+4. Add module reference to edge.deployment. And fill in the image with image variable ({modules.`<modulefoldername`>.`<platform`>.image}), for example for module folder "./modules/datamodule" on linux-x64, the variable will be ${modules.datamodule.linux-x64.image}
