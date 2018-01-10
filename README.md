@@ -5,7 +5,7 @@ This is an edge project scaffolding. Edge project is a deployable unit to iot ed
 Each folder under **modules** folder is an **Edge Module Project**.
 ### Edge Module Project (edgemodule.json)
 1. Module is language specific. It is an implementation unit. The final output of the module project is a version managed image.
-2. Each module will have a module descriptpion file "edgemodule.json". The main perpose of this file is to take care of the version management of the final image, and describe the special properties of the module.
+2. Each module will have a module descriptpion file **"edgemodule.json"**. The main perpose of this file is to take care of the version management of the final image, and describe the special properties of the module.
 3. The **Docker** folder under the project holds the DockerFiles per platforms. For example, the Docker file for linux-x64 platform should be at "./Docker/linux-x64/DockerFile".
 
 ## "edge.deployment" File
